@@ -27,6 +27,7 @@ def download(url):
 		conn = opener.open(request,timeout=60)
 		headers = conn.info()
 		data = conn.read()
+		#对gzip格式进行解压
 		if "content-encoding" in headers:
 			encoding = headers["content-encoding"]
 			if encoding.lower() == "gzip":
